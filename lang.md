@@ -1,5 +1,21 @@
 # PPCA Language
 
+13:56 Update: 函数传递的参数中，数组是传引用的，不是传值。例如
+
+```
+(function (add a)
+  (array.set a 0 1))
+
+(function (main)
+  (block
+    (set a (array.create 10))
+	(array.set a 0 0)
+	(add a)
+	(print (array.get a 0))))
+```
+
+会输出 1 而不是 0.
+
 ## TL;DR
 
 这个程序展示了 PPCA Language 的语法及语义. 这个程序会求出所有输入数据的平方和.
